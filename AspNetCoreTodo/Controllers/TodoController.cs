@@ -19,5 +19,22 @@ namespace AspNetCoreTodo.Controllers
             TodoViewModel viewModel = new() { Items =  items };
             return View(viewModel);
         }
+
+        public async Task<IActionResult> AddItem(TodoItem item)
+        {
+            if(!ModelState.IsValid)
+                return RedirectToAction(nameof(Index));
+
+            try
+            {
+                await _todoItemService.AddItemAsync(item);
+            }
+            catch(InvalidOperationException)
+            {
+                return BadRequest();
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

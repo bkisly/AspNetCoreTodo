@@ -1,0 +1,26 @@
+﻿@model TodoItem
+
+@using(Html.BeginForm("AddItem", "Todo"))
+{
+    <div class="form-floating">
+        <table>
+            <tbody>
+                <tr>
+                    <td class="form-floating">
+                        @Html.TextBoxFor(item => item.Title, new { @class = "form-control", placeholder = "Title" })
+                        @Html.LabelFor(item => item.Title)
+                        @Html.ValidationMessageFor(item => item.Title)
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" type="submit">Add</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}
+
+@section scripts
+{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

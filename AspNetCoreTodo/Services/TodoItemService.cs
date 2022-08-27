@@ -10,11 +10,17 @@ namespace AspNetCoreTodo.Services
 
         public TodoItemService(ApplicationDbContext context) => _context = context;
 
-        public Task<TodoItem[]> GetIncompleteItemsAsync()
+        public async Task<TodoItem[]> GetIncompleteItemsAsync()
         {
-            return (from TodoItem item in _context.Items
+            return await (from TodoItem item in _context.Items
                     where item.IsDone == false
                     select item).ToArrayAsync();
+        }
+
+        public async Task AddItemAsync(TodoItem item)
+        {
+            await _context.AddAsync(item);
+            _context.SaveChanges();
         }
     }
 }
