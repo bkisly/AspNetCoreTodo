@@ -19,6 +19,7 @@ namespace AspNetCoreTodo.Services
 
         public async Task AddItemAsync(TodoItem item)
         {
+            if (item.DueAt == null) item.DueAt = DateTime.Now.AddDays(3);
             await _context.AddAsync(item);
             _context.SaveChanges();
         }

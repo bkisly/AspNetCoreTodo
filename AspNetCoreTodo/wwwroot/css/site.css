@@ -25,3 +25,18 @@ table tr.done {
     text-decoration: line-through;
     color: #888;
 }
+
+/*Custom properties*/
+
+.form-group {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.input-validation-error {
+    border: 2px solid red;
+}
+
+.field-validation-error {
+    color: red;
+}

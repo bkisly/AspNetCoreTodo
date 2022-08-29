@@ -32,3 +32,8 @@
         @await Html.PartialAsync("AddItem", new TodoItem())
     </div>
 </div>
+
+@section scripts
+{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

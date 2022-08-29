@@ -20,10 +20,11 @@ namespace AspNetCoreTodo.Controllers
             return View(viewModel);
         }
 
+        [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> AddItem(TodoItem item)
         {
-            if(!ModelState.IsValid)
-                return RedirectToAction(nameof(Index));
+            if (!ModelState.IsValid)
+                return View(nameof(Index), new TodoViewModel { Items = await _todoItemService.GetIncompleteItemsAsync() });
 
             try
             {

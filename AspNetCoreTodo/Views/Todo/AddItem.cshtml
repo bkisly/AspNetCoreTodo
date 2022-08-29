@@ -2,25 +2,18 @@
 
 @using(Html.BeginForm("AddItem", "Todo"))
 {
-    <div class="form-floating">
-        <table>
-            <tbody>
-                <tr>
-                    <td class="form-floating">
-                        @Html.TextBoxFor(item => item.Title, new { @class = "form-control", placeholder = "Title" })
-                        @Html.LabelFor(item => item.Title)
-                        @Html.ValidationMessageFor(item => item.Title)
-                    </td>
-                    <td>
-                        <button class="btn btn-primary" type="submit">Add</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="form-floating form-group">
+        @Html.TextBoxFor(item => item.Title, new { @class = "form-control", placeholder = "Title" })
+        @Html.LabelFor(item => item.Title)
+        @Html.ValidationMessageFor(item => item.Title)
     </div>
-}
-
-@section scripts
-{
-    @await Html.PartialAsync("_ValidationScriptsPartial")
+        <div class="form-floating form-group">
+        @Html.TextBoxFor(item => item.DueAt, new { @class = "form-control", placeholder = "Due at" })
+        @Html.LabelFor(item => item.DueAt)
+        @Html.ValidationMessageFor(item => item.DueAt)
+    </div>
+    <div class="form-floating form-group">
+        @Html.AntiForgeryToken()
+        <button class="btn btn-primary" type="submit">Add</button>
+    </div>
 }
