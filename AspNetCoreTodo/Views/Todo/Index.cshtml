@@ -20,7 +20,11 @@
         {
             <tr>
                 <td>
-                    <input type="checkbox" class="done-checkbox">
+                    @using(Html.BeginForm("MarkDone", "Todo"))
+                    {
+                        <input type="checkbox" class="done-checkbox">
+                        <input name="id" type="hidden" value="@item.Id">
+                    }
                 </td>
                 <td>@item.Title</td>
                 <td>@item.DueAt.Humanize()</td>
