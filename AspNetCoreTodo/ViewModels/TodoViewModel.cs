@@ -1,4 +1,6 @@
-﻿namespace AspNetCoreTodo.Models
+﻿using AspNetCoreTodo.Models;
+
+namespace AspNetCoreTodo.ViewModels
 {
     public class TodoViewModel
     {
