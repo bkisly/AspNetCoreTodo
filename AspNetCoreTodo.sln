@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreTodo", "AspNetCoreTodo\AspNetCoreTodo.csproj", "{43BE59D9-D252-499C-8F6D-2DB7F1036769}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreTodo.Test", "AspNetCoreTodo.Test\AspNetCoreTodo.Test.csproj", "{77E6DE43-254C-48E4-94C6-BD4E5AA42DDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreTodo.UnitTests", "AspNetCoreTodo.Test\AspNetCoreTodo.UnitTests.csproj", "{77E6DE43-254C-48E4-94C6-BD4E5AA42DDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

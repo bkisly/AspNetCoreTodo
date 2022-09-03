@@ -4,7 +4,7 @@ using AspNetCoreTodo.Models;
 using AspNetCoreTodo.Data;
 using AspNetCoreTodo.Services;
 
-namespace AspNetCoreTodo.Test
+namespace AspNetCoreTodo.UnitTests
 {
     public class TodoItemServiceShould
     {
